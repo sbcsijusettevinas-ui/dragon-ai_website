@@ -3,10 +3,544 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRAGONAI</title>
+  <title>Dragon AI — Empowering Digital Growth</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Flaticon Uicons -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <p>test commit</p>
-  <p>hhahaaas</p>
+
+  <!-- =====================
+       NAVBAR
+  ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <a href="#" class="nav-logo">
+        <div class="logo-icon-frame">
+          <img src="Assets/DragonAi LOGO v3.png" alt="Dragon AI logo mark" class="logo-mark">
+        </div>
+        <span class="logo-wordmark">DRAGON<span class="logo-ai">AI</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact" class="nav-cta">Get Started</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger" role="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- =====================
+       HERO
+  ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-inner">
+
+      <!-- Copy -->
+      <div>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          AI-Powered Marketing
+        </div>
+        <h1 class="hero-title">
+          Unlock Your Brand's<br>
+          <span class="grad-text">Full Digital Potential</span>
+        </h1>
+        <p class="hero-desc">
+          Dragon AI empowers businesses with innovative marketing strategies, creative storytelling,
+          and data-driven campaigns — designed to dominate the digital landscape.
+        </p>
+        <div class="hero-actions">
+          <a href="#services" class="btn-primary">
+            Explore Services
+            <i class="fi fi-rr-arrow-right btn-icon"></i>
+          </a>
+          <a href="#contact" class="btn-ghost">Talk to Us</a>
+        </div>
+      </div>
+
+      <!-- Dashboard card -->
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+
+          <div class="float-card fc-1">
+            <div class="fc-lbl">Campaign ROI</div>
+            <div class="fc-val">+312%</div>
+            <div class="fc-sub">&#x2191; vs last quarter</div>
+          </div>
+
+          <div class="hero-main-card">
+            <div class="card-row">
+              <span class="card-label">Performance Overview</span>
+              <span class="card-live"><span class="live-dot"></span>Live</span>
+            </div>
+            <div class="hero-metric-val" id="heroCounter">0</div>
+            <div class="hero-metric-lbl">Monthly Impressions</div>
+            <div class="bars">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar hi"></div>
+              <div class="bar"></div>
+              <div class="bar hi"></div>
+              <div class="bar"></div>
+              <div class="bar hi"></div>
+            </div>
+          </div>
+
+          <div class="float-card fc-2">
+            <div class="fc-lbl">Active Brands</div>
+            <div class="fc-val">200+</div>
+            <div class="fc-sub">Across APAC</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       PARTNERS
+  ===================== -->
+  <div class="partners">
+    <p class="partners-lbl">Trusted by leading brands</p>
+    <div class="partners-row">
+      <div class="p-chip">Honor of Kings</div>
+      <div class="p-chip">Tencent</div>
+      <div class="p-chip">Alibaba Cloud</div>
+      <div class="p-chip">Huawei</div>
+      <div class="p-chip">Vivo</div>
+      <div class="p-chip">Haidilao</div>
+      <div class="p-chip">OMODA | JAECOO</div>
+      <div class="p-chip">BossJob</div>
+      <div class="p-chip">Level Infinite</div>
+    </div>
+  </div>
+
+  <!-- =====================
+       FEATURES
+  ===================== -->
+  <section class="features-section" id="features">
+    <div class="s-inner">
+      <div class="s-header center reveal">
+        <span class="s-tag">Why Dragon AI</span>
+        <h2 class="s-title">Everything your brand needs<br>to grow faster</h2>
+        <p class="s-desc">From concept to conversion — we combine creativity, technology, and deep market insight to build campaigns that move people.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="f-card reveal d1">
+          <span class="f-num">01</span>
+          <div class="f-icon ic-orange"><i class="fi fi-rr-chart-line-up"></i></div>
+          <h3 class="f-title">Data-Driven Strategy</h3>
+          <p class="f-desc">Every campaign is backed by real-time analytics and market intelligence, ensuring your message reaches the right audience at precisely the right moment.</p>
+        </div>
+
+        <div class="f-card reveal d2">
+          <span class="f-num">02</span>
+          <div class="f-icon ic-amber"><i class="fi fi-rr-palette"></i></div>
+          <h3 class="f-title">Creative Excellence</h3>
+          <p class="f-desc">Our team conceptualizes visually compelling content — from TVCs to motion graphics — tailored specifically for Filipino and APAC audiences.</p>
+        </div>
+
+        <div class="f-card reveal d3">
+          <span class="f-num">03</span>
+          <div class="f-icon ic-blue"><i class="fi fi-rr-megaphone"></i></div>
+          <h3 class="f-title">Multi-Channel Reach</h3>
+          <p class="f-desc">We amplify your brand across outdoor media, MRT activations, digital platforms, and radio — ensuring you're everywhere your audience already is.</p>
+        </div>
+
+        <div class="f-card reveal d1">
+          <span class="f-num">04</span>
+          <div class="f-icon ic-green"><i class="fi fi-rr-handshake"></i></div>
+          <h3 class="f-title">Brand Partnerships</h3>
+          <p class="f-desc">Unlock co-marketing opportunities through our established network of Chinese-Filipino business communities for amplified reach and credibility.</p>
+        </div>
+
+        <div class="f-card reveal d2">
+          <span class="f-num">05</span>
+          <div class="f-icon ic-pink"><i class="fi fi-rr-rocket"></i></div>
+          <h3 class="f-title">Rapid Execution</h3>
+          <p class="f-desc">From brief to launch, our agile production process gets campaigns live faster without ever compromising on creative quality or strategic impact.</p>
+        </div>
+
+        <div class="f-card reveal d3">
+          <span class="f-num">06</span>
+          <div class="f-icon ic-cyan"><i class="fi fi-rr-globe"></i></div>
+          <h3 class="f-title">Cultural Intelligence</h3>
+          <p class="f-desc">Deep understanding of Filipino and Chinese-Filipino cultural dynamics lets us craft messages that genuinely connect and drive lasting resonance.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       STATS BAR
+  ===================== -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-val" data-target="200" data-suffix="+">0</div>
+        <div class="stat-lbl">Brand Partners</div>
+      </div>
+      <div class="stat-item reveal d1">
+        <div class="stat-val" data-target="500" data-suffix="+">0</div>
+        <div class="stat-lbl">Campaigns Launched</div>
+      </div>
+      <div class="stat-item reveal d2">
+        <div class="stat-val" data-target="50" data-suffix="+">0</div>
+        <div class="stat-lbl">Media Channels</div>
+      </div>
+      <div class="stat-item reveal d3">
+        <div class="stat-val" data-target="98" data-suffix="%">0</div>
+        <div class="stat-lbl">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================
+       SERVICES
+  ===================== -->
+  <section class="services-section" id="services">
+    <div class="s-inner">
+      <div class="s-header reveal">
+        <span class="s-tag">What We Do</span>
+        <h2 class="s-title">Full-spectrum marketing services<br>for modern brands</h2>
+        <p class="s-desc">From creative production to strategic media placement, we deliver end-to-end solutions that build brand equity and drive measurable results.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="sv-card reveal d1">
+          <div class="sv-head">
+            <div class="sv-icon ic-orange"><i class="fi fi-rr-paint-brush"></i></div>
+            <div class="sv-arrow"><i class="fi fi-rr-arrow-right"></i></div>
+          </div>
+          <h3 class="sv-title">Creative Services</h3>
+          <p class="sv-desc">We conceptualize and craft impactful visual content tailored for Filipino audiences — including TVCs, radio campaigns, animations, and localized materials designed to drive deep engagement.</p>
+          <div class="sv-tags">
+            <span class="sv-tag">TV Commercials</span>
+            <span class="sv-tag">Animation</span>
+            <span class="sv-tag">Radio Ads</span>
+            <span class="sv-tag">Brand Identity</span>
+          </div>
+        </div>
+
+        <div class="sv-card reveal d2">
+          <div class="sv-head">
+            <div class="sv-icon ic-amber"><i class="fi fi-rr-chart-pie"></i></div>
+            <div class="sv-arrow"><i class="fi fi-rr-arrow-right"></i></div>
+          </div>
+          <h3 class="sv-title">Media Buying</h3>
+          <p class="sv-desc">Strategic ad placement expertise across outdoor advertising, MRT/subway activations, and transit media — engineered to maximize visibility, foot traffic, and return on investment.</p>
+          <div class="sv-tags">
+            <span class="sv-tag">OOH Advertising</span>
+            <span class="sv-tag">MRT Activations</span>
+            <span class="sv-tag">Transit Media</span>
+            <span class="sv-tag">ROI Tracking</span>
+          </div>
+        </div>
+
+        <div class="sv-card reveal d3">
+          <div class="sv-head">
+            <div class="sv-icon ic-cyan"><i class="fi fi-rr-users"></i></div>
+            <div class="sv-arrow"><i class="fi fi-rr-arrow-right"></i></div>
+          </div>
+          <h3 class="sv-title">Partnership &amp; Activations</h3>
+          <p class="sv-desc">We specialize in brand collaborations, product launches, community events, and growth campaigns — creating memorable brand experiences that foster genuine consumer loyalty.</p>
+          <div class="sv-tags">
+            <span class="sv-tag">Product Launches</span>
+            <span class="sv-tag">Live Events</span>
+            <span class="sv-tag">Collaborations</span>
+            <span class="sv-tag">Community</span>
+          </div>
+        </div>
+
+        <div class="sv-card reveal d4">
+          <div class="sv-head">
+            <div class="sv-icon ic-purple"><i class="fi fi-rr-video-camera"></i></div>
+            <div class="sv-arrow"><i class="fi fi-rr-arrow-right"></i></div>
+          </div>
+          <h3 class="sv-title">Production</h3>
+          <p class="sv-desc">Full-scale production capabilities covering video shoots, animation, and audio — from concept through final delivery, built for brands that demand standout content at every touchpoint.</p>
+          <div class="sv-tags">
+            <span class="sv-tag">Video Production</span>
+            <span class="sv-tag">Studio Shoots</span>
+            <span class="sv-tag">Post-Production</span>
+            <span class="sv-tag">Sound Design</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       TESTIMONIALS
+  ===================== -->
+  <section id="testimonials">
+    <div class="s-inner">
+      <div class="s-header center reveal">
+        <span class="s-tag">Testimonials</span>
+        <h2 class="s-title">What our partners say</h2>
+        <p class="s-desc">Trusted by growing brands across the Philippines and the Asia-Pacific region.</p>
+      </div>
+    </div>
+
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testiTrack">
+
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">"Dragon AI transformed how we approach digital audiences in the Philippines. Their cultural insight and creative energy are unmatched — our campaign exceeded every KPI we set."</p>
+          <div class="t-author">
+            <div class="t-avatar av-red">MA</div>
+            <div>
+              <div class="t-name">Marco Alonzo</div>
+              <div class="t-role">Marketing Director, Tech Startup</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">"The OOH placements they arranged for our product launch drove incredible foot traffic and recall. We saw a 40% lift in brand awareness in just two weeks."</p>
+          <div class="t-author">
+            <div class="t-avatar av-amber">SL</div>
+            <div>
+              <div class="t-name">Sofia Lin</div>
+              <div class="t-role">Brand Manager, Consumer Goods</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">"Their production team delivered a TVC that genuinely captured our brand's soul — major-agency quality at a fraction of the cost and timeline. Absolutely remarkable."</p>
+          <div class="t-author">
+            <div class="t-avatar av-teal">RC</div>
+            <div>
+              <div class="t-name">Raymond Cruz</div>
+              <div class="t-role">CEO, Retail Brand</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">"Working with Dragon AI for our community activation was seamless. They understood our audience, executed flawlessly, and delivered results we'll be building on for years."</p>
+          <div class="t-author">
+            <div class="t-avatar av-indigo">JP</div>
+            <div>
+              <div class="t-name">Jasmine Park</div>
+              <div class="t-role">Head of Partnerships, F&amp;B Group</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">"The data-driven approach Dragon AI took for our media buying strategy was eye-opening. Every peso felt optimized. We'll never go back to traditional agency media planning."</p>
+          <div class="t-author">
+            <div class="t-avatar av-green">DT</div>
+            <div>
+              <div class="t-name">David Tan</div>
+              <div class="t-role">VP Marketing, Fintech Company</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-card">
+          <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="t-text">"From brief to launch in record time — Dragon AI's agile process is a game-changer. The quality of creative they produce never ceases to impress our stakeholders."</p>
+          <div class="t-author">
+            <div class="t-avatar av-pink">AC</div>
+            <div>
+              <div class="t-name">Andrea Chan</div>
+              <div class="t-role">CMO, Lifestyle Brand</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       CTA
+  ===================== -->
+  <section class="cta-section" id="contact">
+    <div class="cta-box reveal">
+      <div class="cta-glow"></div>
+      <span class="s-tag">Get Started</span>
+      <h2 class="cta-title">
+        Ready to grow your brand<br>
+        <span class="grad-text">in the digital age?</span>
+      </h2>
+      <p class="cta-desc">
+        Join hundreds of brands across the Philippines and APAC that trust Dragon AI to power
+        their marketing growth. Let's build something remarkable together.
+      </p>
+      <div class="cta-btns">
+        <a href="mailto:hello@dragonai.ph" class="btn-primary">
+          Start a Conversation
+          <i class="fi fi-rr-arrow-right btn-icon"></i>
+        </a>
+        <a href="#services" class="btn-ghost">View Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <div class="footer-logo-frame">
+            <img src="Assets/DragonAi LOGO v3.png" alt="Dragon AI logo mark" class="logo-mark">
+          </div>
+          <span class="logo-wordmark">DRAGON<span class="logo-ai">AI</span></span>
+        </a>
+        <p>Dragon AI Media Inc. is the advertising subsidiary of Philippine Dragon Media Network — one of the most influential Chinese news platforms in the Philippines.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Creative Services</a></li>
+          <li><a href="#services">Media Buying</a></li>
+          <li><a href="#services">Partnerships</a></li>
+          <li><a href="#services">Production</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@dragonai.ph">hello@dragonai.ph</a></li>
+          <li><a href="#">Manila, Philippines</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Dragon AI Media Inc. All Rights Reserved.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Facebook"><i class="fi fi-brands-facebook"></i></a>
+        <a href="#" class="social-btn" aria-label="X / Twitter"><i class="fi fi-brands-twitter"></i></a>
+        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+        <a href="#" class="social-btn" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================
+       JAVASCRIPT
+  ===================== -->
+  <script>
+    /* Navbar scroll */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* Mobile menu */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    /* Scroll reveal */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* Stat counters */
+    function animateCount(el, target, suffix, duration = 1800) {
+      const start = performance.now();
+      const update = now => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    }
+
+    const statIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCount(e.target, +e.target.dataset.target, e.target.dataset.suffix || '');
+          statIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-val[data-target]').forEach(el => statIO.observe(el));
+
+    /* Hero impression counter */
+    (() => {
+      const el = document.getElementById('heroCounter');
+      if (!el) return;
+      const start = performance.now();
+      const update = now => {
+        const p = Math.min((now - start) / 2600, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.floor(eased * 2400000).toLocaleString();
+        if (p < 1) requestAnimationFrame(update);
+      };
+      setTimeout(() => requestAnimationFrame(update), 500);
+    })();
+
+    /* Duplicate testimonial cards for infinite scroll */
+    const track = document.getElementById('testiTrack');
+    if (track) track.innerHTML += track.innerHTML;
+  </script>
+
 </body>
 </html>
