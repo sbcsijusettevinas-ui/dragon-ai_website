@@ -755,6 +755,86 @@ section { padding: 96px 32px; }
 .f-desc  { font-size: .825rem; color: var(--text-sec); line-height: 1.72; }
 
 /* ===========================
+   PROJECTS
+=========================== */
+.projects-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.pj-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+
+.pj-card:hover {
+  border-color: rgba(232, 56, 13, .4);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .4), 0 0 0 1px rgba(232, 56, 13, .08);
+}
+
+.pj-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--surface2);
+}
+
+.pj-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+}
+
+.pj-card:hover .pj-img {
+  transform: scale(1.06);
+}
+
+.pj-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  background: rgba(232, 56, 13, .88);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 100px;
+  backdrop-filter: blur(6px);
+}
+
+.pj-body {
+  padding: 22px 26px 26px;
+}
+
+.pj-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.pj-desc {
+  font-size: .82rem;
+  color: var(--text-sec);
+  line-height: 1.75;
+}
+
+/* ===========================
    STATS BAR
 =========================== */
 .stats-bar {
@@ -1369,6 +1449,7 @@ section { padding: 96px 32px; }
 =========================== */
 @media (max-width: 1024px) {
   .features-grid      { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid      { grid-template-columns: repeat(2, 1fr); }
   .footer-grid        { grid-template-columns: 1fr 1fr; gap: 32px; }
   .about-values-grid  { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1381,6 +1462,7 @@ section { padding: 96px 32px; }
   .hero-visual { display: none; }
 
   .features-grid       { grid-template-columns: 1fr; }
+  .projects-grid       { grid-template-columns: 1fr; }
   .services-grid       { grid-template-columns: 1fr; }
   .stats-grid          { grid-template-columns: repeat(2, 1fr); }
   .about-preview-grid  { grid-template-columns: 1fr; gap: 40px; }
