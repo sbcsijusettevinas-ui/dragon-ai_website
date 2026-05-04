@@ -31,6 +31,9 @@
   --r-lg: 24px;
 }
 
+/* Applied to <html> instantly on load to prevent dark flash */
+html.light-early { background: #F4F5FA; }
+
 /* Light mode overrides */
 body.light {
   --bg:       #F4F5FA;
@@ -41,6 +44,60 @@ body.light {
   --text-sec:   #3D4166;
   --text-muted: #7B82A8;
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+/* Light mode hero background */
+body.light .hero {
+  background: linear-gradient(135deg, #FFF8F5 0%, #F4F5FA 50%, #EEF0FF 100%);
+}
+
+/* Dot grid instead of line grid */
+body.light .hero-grid {
+  background-image:
+    radial-gradient(circle, rgba(232, 56, 13, .55) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 90% 85% at center, black 30%, transparent 80%);
+}
+
+/* Lighter, warmer orbs */
+body.light .orb-1 {
+  background: radial-gradient(circle, #E8380D, transparent);
+  opacity: .12;
+}
+body.light .orb-2 {
+  background: radial-gradient(circle, #FF9A3C, transparent);
+  opacity: .14;
+}
+body.light .orb-3 {
+  background: radial-gradient(circle, #6366F1, transparent);
+  opacity: .10;
+}
+
+/* Decorative corner shapes */
+body.light .hero-bg::before,
+body.light .hero-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body.light .hero-bg::before {
+  width: 480px;
+  height: 480px;
+  top: -160px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(232, 56, 13, .07), transparent 70%);
+  border: 1px solid rgba(232, 56, 13, .08);
+}
+
+body.light .hero-bg::after {
+  width: 320px;
+  height: 320px;
+  bottom: -80px;
+  right: 10%;
+  background: radial-gradient(circle, rgba(99, 102, 241, .07), transparent 70%);
+  border: 1px solid rgba(99, 102, 241, .08);
 }
 
 html { scroll-behavior: smooth; }
