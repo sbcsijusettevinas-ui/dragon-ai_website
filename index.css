@@ -31,6 +31,18 @@
   --r-lg: 24px;
 }
 
+/* Light mode overrides */
+body.light {
+  --bg:       #F4F5FA;
+  --surface:  #FFFFFF;
+  --surface2: #E8EAF2;
+  --border:   rgba(0, 0, 0, 0.09);
+  --text:       #0E0F1C;
+  --text-sec:   #3D4166;
+  --text-muted: #7B82A8;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -161,6 +173,41 @@ body {
   border-radius: 2px;
   transition: all .3s;
 }
+
+/* Nav right group */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-sec);
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* show moon in dark, sun in light */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+body.light .theme-toggle .icon-sun  { display: block; }
+body.light .theme-toggle .icon-moon { display: none; }
 
 /* ===========================
    HERO
@@ -479,12 +526,28 @@ section { padding: 96px 32px; }
   padding: 0 32px;
 }
 
-/* Marquee track — fade edges */
+/* Drag-scroll track — fade edges */
 .marquee-track {
   width: 100%;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-  mask-image:         linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image:         linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  padding: 12px 0 16px;
+}
+
+.marquee-track::-webkit-scrollbar { display: none; }
+
+.marquee-track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.marquee-track.is-dragging .logo-chip {
+  pointer-events: none;
 }
 
 .marquee-inner {
@@ -492,41 +555,45 @@ section { padding: 96px 32px; }
   align-items: center;
   gap: 20px;
   width: max-content;
-  animation: marquee-scroll 32s linear infinite;
-}
-
-/* pause entire strip on hover */
-.marquee-track:hover .marquee-inner {
-  animation-play-state: paused;
-}
-
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  padding: 0 48px;
 }
 
 /* Individual logo card */
 .logo-chip {
   flex-shrink: 0;
-  width: 172px;
-  height: 88px;
+  width: 260px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--surface);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  cursor: grab;
   transition: box-shadow .35s ease, transform .35s ease, border-color .35s ease;
 }
 
 .logo-chip img {
   width: 100%;
-  height: 100%;
+  height: 140px;
   object-fit: cover;
   display: block;
   transition: transform .35s ease;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.logo-chip-name {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 10px 10px;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
 }
 
 .logo-chip:hover {

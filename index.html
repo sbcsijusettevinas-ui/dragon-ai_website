@@ -16,8 +16,6 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <p>test commit</p>
-  <p>hhahaaas</p>
 
   <!-- =====================
        NAVBAR
@@ -39,8 +37,15 @@
         <li><a href="#contact" class="nav-cta">Get Started</a></li>
       </ul>
 
-      <div class="hamburger" id="hamburger" role="button" aria-label="Open menu">
-        <span></span><span></span><span></span>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <div class="hamburger" id="hamburger" role="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </div>
       </div>
 
     </div>
@@ -131,26 +136,15 @@
     <div class="marquee-track">
       <div class="marquee-inner">
 
-        <div class="logo-chip"><img src="Assets/1 - honor of kings.png" alt="Honor of Kings"></div>
-        <div class="logo-chip"><img src="Assets/3 - tencent.png"       alt="Tencent"></div>
-        <div class="logo-chip"><img src="Assets/alibaba.png"           alt="Alibaba Cloud"></div>
-        <div class="logo-chip"><img src="Assets/9 - haier.png"         alt="Haier"></div>
-        <div class="logo-chip"><img src="Assets/8 - vivo.png"          alt="Vivo"></div>
-        <div class="logo-chip"><img src="Assets/h.png"                 alt="Haidilao"></div>
-        <div class="logo-chip"><img src="Assets/oj.png"                alt="OMODA | JAECOO"></div>
-        <div class="logo-chip"><img src="Assets/buz.png"               alt="BossJob"></div>
-        <div class="logo-chip"><img src="Assets/infinite.png"          alt="Level Infinite"></div>
-
-        <!-- duplicate set for seamless loop -->
-        <div class="logo-chip"><img src="Assets/1 - honor of kings.png" alt="Honor of Kings"></div>
-        <div class="logo-chip"><img src="Assets/3 - tencent.png"        alt="Tencent"></div>
-        <div class="logo-chip"><img src="Assets/alibaba.png"            alt="Alibaba Cloud"></div>
-        <div class="logo-chip"><img src="Assets/9 - haier.png"          alt="Haier"></div>
-        <div class="logo-chip"><img src="Assets/8 - vivo.png"           alt="Vivo"></div>
-        <div class="logo-chip"><img src="Assets/h.png"                  alt="Haidilao"></div>
-        <div class="logo-chip"><img src="Assets/oj.png"                 alt="OMODA | JAECOO"></div>
-        <div class="logo-chip"><img src="Assets/buz.png"                alt="BossJob"></div>
-        <div class="logo-chip"><img src="Assets/infinite.png"           alt="Level Infinite"></div>
+        <div class="logo-chip"><img src="Assets/1 - honor of kings.png" alt="Honor of Kings"><span class="logo-chip-name">Honor of Kings</span></div>
+        <div class="logo-chip"><img src="Assets/3 - tencent.png"       alt="Tencent"><span class="logo-chip-name">Tencent</span></div>
+        <div class="logo-chip"><img src="Assets/alibaba.png"           alt="Alibaba Cloud"><span class="logo-chip-name">Alibaba Cloud</span></div>
+        <div class="logo-chip"><img src="Assets/9 - haier.png"         alt="Haier"><span class="logo-chip-name">Haier</span></div>
+        <div class="logo-chip"><img src="Assets/8 - vivo.png"          alt="Vivo"><span class="logo-chip-name">Vivo</span></div>
+        <div class="logo-chip"><img src="Assets/h.png"                 alt="Haidilao"><span class="logo-chip-name">Haidilao</span></div>
+        <div class="logo-chip"><img src="Assets/oj.png"                alt="OMODA | JAECOO"><span class="logo-chip-name">OMODA | JAECOO</span></div>
+        <div class="logo-chip"><img src="Assets/buz.png"               alt="BossJob"><span class="logo-chip-name">BossJob</span></div>
+        <div class="logo-chip"><img src="Assets/infinite.png"          alt="Level Infinite"><span class="logo-chip-name">Level Infinite</span></div>
 
       </div>
     </div>
@@ -508,6 +502,35 @@
     navLinks.querySelectorAll('a').forEach(a =>
       a.addEventListener('click', () => navLinks.classList.remove('open'))
     );
+
+    /* Theme toggle */
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+    });
+
+    /* Partners drag-to-scroll */
+    const partnersTrack = document.querySelector('.marquee-track');
+    let isDragging = false, startX, scrollStart;
+
+    partnersTrack.addEventListener('mousedown', e => {
+      isDragging  = true;
+      startX      = e.clientX;
+      scrollStart = partnersTrack.scrollLeft;
+      partnersTrack.classList.add('is-dragging');
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      e.preventDefault();
+      partnersTrack.scrollLeft = scrollStart - (e.clientX - startX);
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      partnersTrack.classList.remove('is-dragging');
+    });
 
     /* Scroll reveal */
     const io = new IntersectionObserver((entries) => {
