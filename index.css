@@ -422,7 +422,7 @@ body.light .theme-toggle .icon-moon { display: none; }
 
 .btn-ghost:hover {
   background: transparent;
-  border-color: var(--primary);
+  border-color: var(--text);
   transform: translateY(-2px);
 }
 
