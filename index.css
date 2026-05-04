@@ -1172,6 +1172,81 @@ section { padding: 96px 32px; }
 }
 
 /* ===========================
+   MISSION & VISION (about page)
+=========================== */
+.about-mission {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.mv-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s, transform .3s, box-shadow .3s;
+}
+
+.mv-card:hover {
+  border-color: rgba(232, 56, 13, .35);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35), 0 0 0 1px rgba(232, 56, 13, .08);
+}
+
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.mv-card.mission::before { background: linear-gradient(90deg, var(--primary), var(--primary-lt)); }
+.mv-card.vision::before  { background: linear-gradient(90deg, var(--accent), #F472B6); }
+
+.mv-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+}
+
+.mv-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary-lt);
+  margin-bottom: 10px;
+}
+
+.mv-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  margin-bottom: 16px;
+}
+
+.mv-desc {
+  font-size: .875rem;
+  color: var(--text-sec);
+  line-height: 1.82;
+}
+
+/* ===========================
    ABOUT PAGE
 =========================== */
 .about-hero {
@@ -1310,6 +1385,7 @@ section { padding: 96px 32px; }
   .stats-grid          { grid-template-columns: repeat(2, 1fr); }
   .about-preview-grid  { grid-template-columns: 1fr; gap: 40px; }
   .about-story-grid    { grid-template-columns: 1fr; gap: 40px; }
+  .mv-grid             { grid-template-columns: 1fr; }
   .about-values-grid   { grid-template-columns: repeat(2, 1fr); }
 
   .nav-links {
