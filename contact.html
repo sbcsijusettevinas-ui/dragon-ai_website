@@ -1,0 +1,336 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Dragon AI</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Flaticon Uicons -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Apply saved theme instantly to avoid flash -->
+  <script>if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light-early');</script>
+</head>
+<body>
+
+  <!-- =====================
+       NAVBAR
+  ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon-frame">
+          <img src="Assets/DragonAi LOGO v3.png" alt="Dragon AI logo mark" class="logo-mark">
+        </div>
+        <span class="logo-wordmark">DRAGON<span class="logo-ai">AI</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#features">Expertise</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#contact-form" class="nav-cta">Get Started</a>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <div class="hamburger" id="hamburger" role="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- =====================
+       HERO
+  ===================== -->
+  <section class="contact-hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="contact-hero-inner reveal">
+      <span class="s-tag">Contact Us</span>
+      <h1 class="hero-title">
+        Let's build something<br>
+        <span class="grad-text">remarkable together</span>
+      </h1>
+      <p class="hero-desc">
+        Whether you're ready to launch a campaign or just exploring possibilities,
+        our team is here to help. Reach out and let's start the conversation.
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================
+       CONTACT MAIN
+  ===================== -->
+  <section class="contact-section" id="contact-form">
+    <div class="s-inner">
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div class="contact-form-wrap reveal">
+          <h2 class="contact-form-title">Send us a message</h2>
+          <p class="contact-form-sub">Fill in the form below and we'll get back to you within one business day.</p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="fname">Full Name <span class="form-required">*</span></label>
+                <input class="form-input" type="text" id="fname" name="name" placeholder="Juan dela Cruz" required>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="femail">Email Address <span class="form-required">*</span></label>
+                <input class="form-input" type="email" id="femail" name="email" placeholder="juan@company.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" for="fcompany">Company / Brand</label>
+                <input class="form-input" type="text" id="fcompany" name="company" placeholder="Your company name">
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="fservice">Service of Interest</label>
+                <select class="form-input form-select" id="fservice" name="service">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="creative">Creative Services</option>
+                  <option value="media">Media Buying</option>
+                  <option value="partnership">Partnership &amp; Activations</option>
+                  <option value="production">Production</option>
+                  <option value="other">Other / General Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="fmessage">Message <span class="form-required">*</span></label>
+              <textarea class="form-input" id="fmessage" name="message" placeholder="Tell us about your project, goals, or questions…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary contact-submit" id="submitBtn">
+              Send Message
+              <i class="fi fi-rr-paper-plane btn-icon"></i>
+            </button>
+
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon"><i class="fi fi-rr-check-circle"></i></div>
+            <div class="form-success-title">Message sent!</div>
+            <p class="form-success-msg">Thank you for reaching out. We'll get back to you within one business day.</p>
+          </div>
+        </div>
+
+        <!-- INFO -->
+        <div class="contact-info-wrap reveal d2">
+
+          <div class="contact-info-card">
+            <div class="ci-icon ic-orange"><i class="fi fi-rr-envelope"></i></div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value"><a href="mailto:hello@dragonai.ph">hello@dragonai.ph</a></div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="ci-icon ic-amber"><i class="fi fi-rr-phone-call"></i></div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-value"><a href="tel:+6328XXXXXXX">+63 (2) 8XXX-XXXX</a></div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="ci-icon ic-blue"><i class="fi fi-rr-marker"></i></div>
+            <div>
+              <div class="ci-label">Address</div>
+              <div class="ci-value">5th Floor, Salustiana D. Ty Tower<br>104 Paseo de Roxas Ave, Makati City<br>Metro Manila, Philippines</div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="ci-icon ic-green"><i class="fi fi-rr-clock"></i></div>
+            <div>
+              <div class="ci-label">Business Hours</div>
+              <div class="ci-value">Mon – Fri &nbsp;·&nbsp; 9:00 AM – 6:00 PM PHT</div>
+            </div>
+          </div>
+
+          <div class="contact-social-block">
+            <div class="contact-social-title">Follow us</div>
+            <div class="contact-social-row">
+              <a href="#" class="social-btn contact-social-btn" aria-label="Facebook"><i class="fi fi-brands-facebook"></i></a>
+              <a href="#" class="social-btn contact-social-btn" aria-label="X / Twitter"><i class="fi fi-brands-twitter"></i></a>
+              <a href="#" class="social-btn contact-social-btn" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+              <a href="#" class="social-btn contact-social-btn" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       MAP
+  ===================== -->
+  <div class="contact-map-section">
+    <div class="contact-map-inner">
+      <div class="s-header reveal">
+        <span class="s-tag">Find Us</span>
+        <h2 class="s-title">Our location</h2>
+        <p class="s-desc">Visit us at the 5th Floor, Salustiana D. Ty Tower, 104 Paseo de Roxas Avenue, Makati City.</p>
+      </div>
+      <div class="map-frame reveal d1">
+        <iframe
+          src="https://maps.google.com/maps?q=Salustiana+D.+Ty+Tower,+104+Paseo+de+Roxas+Ave,+Makati+City,+Metro+Manila,+Philippines&t=&z=17&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Dragon AI — 5th Floor Salustiana D. Ty Tower, 104 Paseo de Roxas Ave, Makati City">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="footer-logo-frame">
+            <img src="Assets/DragonAi LOGO v3.png" alt="Dragon AI logo mark" class="logo-mark">
+          </div>
+          <span class="logo-wordmark">DRAGON<span class="logo-ai">AI</span></span>
+        </a>
+        <p>Dragon AI Media Inc. is the advertising subsidiary of Philippine Dragon Media Network — one of the most influential Chinese news platforms in the Philippines.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Creative Services</a></li>
+          <li><a href="index.html#services">Media Buying</a></li>
+          <li><a href="index.html#services">Partnerships</a></li>
+          <li><a href="index.html#services">Production</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@dragonai.ph">hello@dragonai.ph</a></li>
+          <li><a href="#">Manila, Philippines</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Dragon AI Media Inc. All Rights Reserved.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Facebook"><i class="fi fi-brands-facebook"></i></a>
+        <a href="#" class="social-btn" aria-label="X / Twitter"><i class="fi fi-brands-twitter"></i></a>
+        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+        <a href="#" class="social-btn" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================
+       JAVASCRIPT
+  ===================== -->
+  <script>
+    /* Navbar scroll */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* Mobile menu */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    /* Theme toggle */
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    /* Scroll reveal */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* Contact form — success state */
+    const form       = document.getElementById('contactForm');
+    const successBox = document.getElementById('formSuccess');
+    const submitBtn  = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      /* Basic validation */
+      const name    = form.querySelector('#fname').value.trim();
+      const email   = form.querySelector('#femail').value.trim();
+      const message = form.querySelector('#fmessage').value.trim();
+      if (!name || !email || !message) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      /* Simulate send delay then show success */
+      setTimeout(() => {
+        form.style.display = 'none';
+        successBox.classList.add('visible');
+      }, 900);
+    });
+  </script>
+
+</body>
+</html>
