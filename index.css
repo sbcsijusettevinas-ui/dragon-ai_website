@@ -921,7 +921,9 @@ section { padding: 96px 32px; }
   padding: 0 48px;
 }
 
-/* Individual logo card */
+/* Individual logo card — works as both div and anchor */
+a.logo-chip { text-decoration: none; }
+
 .logo-chip {
   flex-shrink: 0;
   width: 260px;

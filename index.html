@@ -191,15 +191,15 @@
     <div class="marquee-track">
       <div class="marquee-inner">
 
-        <div class="logo-chip"><img src="Assets/1 - honor of kings.png" alt="Honor of Kings"><span class="logo-chip-name">Honor of Kings</span></div>
-        <div class="logo-chip"><img src="Assets/3 - tencent.png"       alt="Tencent"><span class="logo-chip-name">Tencent</span></div>
-        <div class="logo-chip"><img src="Assets/alibaba.png"           alt="Alibaba Cloud"><span class="logo-chip-name">Alibaba Cloud</span></div>
-        <div class="logo-chip"><img src="Assets/9 - haier.png"         alt="Haier"><span class="logo-chip-name">Haier</span></div>
-        <div class="logo-chip"><img src="Assets/8 - vivo.png"          alt="Vivo"><span class="logo-chip-name">Vivo</span></div>
-        <div class="logo-chip"><img src="Assets/h.png"                 alt="Haidilao"><span class="logo-chip-name">Haidilao</span></div>
-        <div class="logo-chip"><img src="Assets/oj.png"                alt="OMODA | JAECOO"><span class="logo-chip-name">OMODA | JAECOO</span></div>
-        <div class="logo-chip"><img src="Assets/buz.png"               alt="BossJob"><span class="logo-chip-name">BossJob</span></div>
-        <div class="logo-chip"><img src="Assets/infinite.png"          alt="Level Infinite"><span class="logo-chip-name">Level Infinite</span></div>
+        <a href="hok.html"  class="logo-chip"><img src="Assets/1 - honor of kings.png" alt="Honor of Kings"><span class="logo-chip-name">Honor of Kings</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/3 - tencent.png"       alt="Tencent"><span class="logo-chip-name">Tencent</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/alibaba.png"           alt="Alibaba Cloud"><span class="logo-chip-name">Alibaba Cloud</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/9 - haier.png"         alt="Haier"><span class="logo-chip-name">Haier</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/8 - vivo.png"          alt="Vivo"><span class="logo-chip-name">Vivo</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/h.png"                 alt="Haidilao"><span class="logo-chip-name">Haidilao</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/oj.png"                alt="OMODA | JAECOO"><span class="logo-chip-name">OMODA | JAECOO</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/buz.png"               alt="BossJob"><span class="logo-chip-name">BossJob</span></a>
+        <a href="#"        class="logo-chip"><img src="Assets/infinite.png"          alt="Level Infinite"><span class="logo-chip-name">Level Infinite</span></a>
 
       </div>
     </div>
@@ -608,25 +608,39 @@
 
     /* Partners drag-to-scroll */
     const partnersTrack = document.querySelector('.marquee-track');
-    let isDragging = false, startX, scrollStart;
+    let isDragging = false, hasDragged = false, startX, scrollStart;
 
     partnersTrack.addEventListener('mousedown', e => {
       isDragging  = true;
+      hasDragged  = false;
       startX      = e.clientX;
       scrollStart = partnersTrack.scrollLeft;
-      partnersTrack.classList.add('is-dragging');
-      e.preventDefault();
     });
 
     document.addEventListener('mousemove', e => {
       if (!isDragging) return;
-      e.preventDefault();
-      partnersTrack.scrollLeft = scrollStart - (e.clientX - startX);
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 5) {
+        hasDragged = true;
+        partnersTrack.classList.add('is-dragging');
+        e.preventDefault();
+      }
+      if (hasDragged) {
+        partnersTrack.scrollLeft = scrollStart - dx;
+      }
     });
 
     document.addEventListener('mouseup', () => {
       isDragging = false;
       partnersTrack.classList.remove('is-dragging');
+    });
+
+    /* Block navigation only when a real drag occurred */
+    partnersTrack.addEventListener('click', e => {
+      if (hasDragged) {
+        e.preventDefault();
+        hasDragged = false;
+      }
     });
 
     /* Scroll reveal */

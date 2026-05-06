@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honor of Kings — Dragon AI Projects</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Flaticon Uicons -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Flash prevention -->
+  <script>if (localStorage.getItem('theme') === 'light') document.documentElement.classList.add('light-early');</script>
+
+  <style>
+    /* ===========================
+       PROJECT HERO
+    =========================== */
+    .project-hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 140px 32px 96px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 44px;
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    .project-breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .project-breadcrumb a:hover { color: var(--primary-lt); }
+    .project-breadcrumb-sep { opacity: .4; font-size: .85rem; }
+
+    .project-hero-content {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .project-brand-logo {
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 30px;
+      display: block;
+    }
+
+    .project-category-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .project-category-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--primary-lt);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .project-category-text {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--primary-lt);
+    }
+
+    .project-title {
+      font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -.03em;
+      margin-bottom: 10px;
+    }
+
+    .project-title-zh {
+      font-size: clamp(.95rem, 1.8vw, 1.2rem);
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: .04em;
+      margin-bottom: 30px;
+    }
+
+    .project-about {
+      font-size: .975rem;
+      color: var(--text-sec);
+      max-width: 620px;
+      line-height: 1.84;
+      margin-bottom: 34px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-tag {
+      font-size: .63rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(232, 56, 13, .35);
+      background: rgba(232, 56, 13, .08);
+      color: var(--primary-lt);
+    }
+
+    /* Meta sidebar card */
+    .project-meta-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 96px;
+    }
+
+    .project-meta-item {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-meta-item:first-child { padding-top: 0; }
+    .project-meta-item:last-child  { padding-bottom: 0; border-bottom: none; }
+
+    .project-meta-label {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .project-meta-value {
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ===========================
+       CAMPAIGN SECTIONS
+    =========================== */
+    .campaign-section {
+      padding: 88px 32px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .campaign-section.alt {
+      background: var(--surface);
+    }
+
+    .campaign-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .campaign-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
+    .campaign-header.no-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .campaign-num {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .campaign-category-label {
+      font-size: .63rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--primary-lt);
+      margin-bottom: 16px;
+    }
+
+    .campaign-title {
+      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -.025em;
+      margin-bottom: 10px;
+    }
+
+    .campaign-title-zh {
+      font-size: .85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: .06em;
+      margin-bottom: 20px;
+    }
+
+    .campaign-desc {
+      font-size: .9rem;
+      color: var(--text-sec);
+      line-height: 1.84;
+    }
+
+    .campaign-desc + .campaign-desc {
+      margin-top: 14px;
+    }
+
+    .campaign-venue {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 22px;
+    }
+
+    .campaign-venue i { color: var(--primary); font-size: .7rem; }
+
+    /* Image gallery */
+    .campaign-gallery {
+      display: grid;
+      gap: 14px;
+    }
+
+    .campaign-gallery.g2 { grid-template-columns: repeat(2, 1fr); }
+    .campaign-gallery.g3 { grid-template-columns: repeat(3, 1fr); }
+    .campaign-gallery.g1 { grid-template-columns: 1fr; }
+
+    /* Full-width gallery strip below header */
+    .campaign-gallery-strip {
+      display: grid;
+      gap: 14px;
+    }
+
+    .campaign-gallery-strip.s2 { grid-template-columns: repeat(2, 1fr); }
+    .campaign-gallery-strip.s3 { grid-template-columns: repeat(3, 1fr); }
+    .campaign-gallery-strip.s1 { grid-template-columns: 1fr; }
+
+    .gallery-item {
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      position: relative;
+      aspect-ratio: 4 / 3;
+    }
+
+    .gallery-item.wide { aspect-ratio: 16 / 9; }
+    .gallery-item.tall { aspect-ratio: 3 / 4; }
+    .gallery-item.sq   { aspect-ratio: 1 / 1; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .45s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 14px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,.72) 0%, transparent 100%);
+      font-size: .7rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.88);
+      letter-spacing: .04em;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+
+    /* ===========================
+       BACK TO PROJECTS
+    =========================== */
+    .project-nav-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text-sec);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      transition: all .25s;
+    }
+
+    .project-back-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary-lt);
+    }
+
+    .project-back-btn i { font-size: .75rem; }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 1024px) {
+      .project-hero-content {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .project-meta-card { position: static; }
+
+      .campaign-header {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        margin-bottom: 36px;
+      }
+
+      .campaign-gallery.g3 { grid-template-columns: repeat(2, 1fr); }
+      .campaign-gallery-strip.s3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .project-hero { padding: 120px 22px 72px; }
+      .campaign-section { padding: 60px 22px; }
+      .project-nav-bar { padding: 20px 22px; }
+
+      .campaign-gallery.g2 { grid-template-columns: 1fr; }
+      .campaign-gallery.g3 { grid-template-columns: 1fr; }
+      .campaign-gallery-strip.s2 { grid-template-columns: 1fr; }
+      .campaign-gallery-strip.s3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================
+       NAVBAR
+  ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon-frame">
+          <img src="Assets/DragonAi LOGO v3.png" alt="Dragon AI logo mark" class="logo-mark">
+        </div>
+        <span class="logo-wordmark">DRAGON<span class="logo-ai">AI</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#features">Expertise</a></li>
+        <li class="nav-dropdown">
+          <a href="projects.html" class="nav-dropdown-toggle">Projects <i class="fi fi-rr-angle-small-down nav-dropdown-caret"></i></a>
+          <div class="nav-dropdown-menu">
+            <a href="events.html" class="nav-dropdown-item">
+              <div class="nav-dd-icon"><i class="fi fi-rr-calendar"></i></div>
+              <div>
+                <div class="nav-dd-label">Events</div>
+                <div class="nav-dd-sub">Community &amp; Brand Activations</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li><a href="index.html#services">Services</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="contact.html" class="nav-cta">Get Started</a>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <div class="hamburger" id="hamburger" role="button" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- =====================
+       PROJECT HERO
+  ===================== -->
+  <section class="project-hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="project-hero-inner">
+
+      <div class="project-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="project-breadcrumb-sep">›</span>
+        <a href="projects.html">Projects</a>
+        <span class="project-breadcrumb-sep">›</span>
+        <span>Honor of Kings</span>
+      </div>
+
+      <div class="project-hero-content">
+
+        <div class="reveal">
+          <img src="Assets/1 - honor of kings.png" alt="Honor of Kings" class="project-brand-logo">
+
+          <div class="project-category-row">
+            <span class="project-category-dot"></span>
+            <span class="project-category-text">Projects &nbsp;·&nbsp; Out-of-Home Advertising &nbsp;·&nbsp; 3D动画制作 &amp; 户外广告采买</span>
+          </div>
+
+          <h1 class="project-title">Honor of Kings</h1>
+          <p class="project-title-zh">菲律宾历史上第一个手游3D户外广告</p>
+
+          <p class="project-about">
+            As the No. 1 MOBA game in APAC, Honor of Kings achieved a historic milestone in the Philippines — Dragon AI spearheaded the country's first-ever 3D mobile game outdoor advertisement and led a full-scale OOH campaign spanning 3D billboard productions, invitational event media, LRT wraps, and public transit activations that reached millions of Filipino commuters and gamers nationwide.
+          </p>
+
+          <div class="project-tags">
+            <span class="project-tag">3D Animation</span>
+            <span class="project-tag">Out-of-Home</span>
+            <span class="project-tag">Transit Media</span>
+            <span class="project-tag">LRT Wraps</span>
+            <span class="project-tag">户外广告采买</span>
+            <span class="project-tag">3D动画制作</span>
+          </div>
+        </div>
+
+        <div class="project-meta-card reveal d2">
+          <div class="project-meta-item">
+            <div class="project-meta-label">Client</div>
+            <div class="project-meta-value">Honor of Kings (Tencent)</div>
+          </div>
+          <div class="project-meta-item">
+            <div class="project-meta-label">Campaign Type</div>
+            <div class="project-meta-value">OOH + Transit Media</div>
+          </div>
+          <div class="project-meta-item">
+            <div class="project-meta-label">Market</div>
+            <div class="project-meta-value">Philippines</div>
+          </div>
+          <div class="project-meta-item">
+            <div class="project-meta-label">Services</div>
+            <div class="project-meta-value">3D Animation<br>Media Buying<br>Transit Wraps</div>
+          </div>
+          <div class="project-meta-item">
+            <div class="project-meta-label">Campaigns</div>
+            <div class="project-meta-value">5 Activations</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       CAMPAIGN 01 — Philippines' First 3D OOH Ad (BGC)
+  ===================== -->
+  <section class="campaign-section">
+    <div class="campaign-inner">
+
+      <div class="campaign-header">
+        <div class="reveal">
+          <div class="campaign-num">Campaign 01</div>
+          <div class="campaign-category-label">Out-of-Home Advertising &nbsp;·&nbsp; 3D Billboard</div>
+          <h2 class="campaign-title">Honor of Kings (HOK)<br>3D Outdoor Advertisement</h2>
+          <p class="campaign-title-zh">菲律宾首个手机游戏3D户外广告</p>
+          <p class="campaign-desc">
+            Dragon AI made history by producing and deploying the Philippines' first-ever 3D mobile game outdoor advertisement for Honor of Kings. The groundbreaking anamorphic 3D billboard at BGC Central Square in Taguig City captivated audiences with stunning visual illusions — blending the game's vivid characters and action sequences into the real-world cityscape.
+          </p>
+          <p class="campaign-desc">
+            The campaign generated massive organic reach, with crowds gathering at the site and videos going viral across social media, cementing Honor of Kings as a cultural force in Philippine gaming.
+          </p>
+          <div class="campaign-venue">
+            <i class="fi fi-rr-marker"></i>
+            BGC Central Square, Taguig City
+          </div>
+        </div>
+
+        <div class="campaign-gallery g2 reveal d2">
+          <div class="gallery-item">
+            <img src="Assets/HOK/bgc-led-display.png" alt="HOK Large LED Display BGC" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">Large-Scale LED Display — BGC</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Assets/HOK/bgc-hok-billboard.png" alt="Honor of Kings LED Billboard BGC" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">HOK Billboard Display</span>
+          </div>
+          <div class="gallery-item wide" style="grid-column: span 2; aspect-ratio: 3 / 1;">
+            <img src="Assets/HOK/bgc-3d-billboard-night.png" alt="HOK 3D Billboard BGC Nighttime" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">BGC Central Square — 3D Billboard Nighttime</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       CAMPAIGN 02 — HOK Invitational S3 OOH Production
+  ===================== -->
+  <section class="campaign-section alt">
+    <div class="campaign-inner">
+
+      <div class="campaign-header">
+        <div class="reveal">
+          <div class="campaign-num">Campaign 02</div>
+          <div class="campaign-category-label">Out-of-Home Advertising &nbsp;·&nbsp; Event OOH</div>
+          <h2 class="campaign-title">HOK Invitational<br>Season 3 OOH Production</h2>
+          <p class="campaign-title-zh">王者荣耀邀请赛第三季户外广告制作</p>
+          <p class="campaign-desc">
+            To build hype for the Honor of Kings Invitational Season 3, Dragon AI executed a high-impact OOH production campaign across key commercial areas and shopping malls in Metro Manila. Towering column wraps, large-format billboards, and standee placements transformed major venues into an immersive tournament experience.
+          </p>
+          <p class="campaign-desc">
+            The campaign successfully drove record tournament awareness, boosting viewership and driving foot traffic to fan activation zones throughout the event period.
+          </p>
+        </div>
+
+        <div class="campaign-gallery g2 reveal d2">
+          <div class="gallery-item">
+            <img src="Assets/HOK/invitational-s3-columns.png" alt="HOK Invitational S3 Mall Column Banners" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">Mall Column Wraps</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Assets/HOK/time-for-victory-billboard.png" alt="Honor of Kings Time for Victory Outdoor Billboard" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">"Time for Victory" Billboard</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       CAMPAIGN 03 — LRT Wraps (HOK x Bleach)
+  ===================== -->
+  <section class="campaign-section">
+    <div class="campaign-inner">
+
+      <div class="campaign-header">
+        <div class="reveal">
+          <div class="campaign-num">Campaign 03</div>
+          <div class="campaign-category-label">Transit Media &nbsp;·&nbsp; LRT Advertising</div>
+          <h2 class="campaign-title">HOK 2025 OOH Campaign —<br>LRT Wraps</h2>
+          <p class="campaign-title-zh">2025年王者荣耀 × 地铁广告包装</p>
+          <p class="campaign-desc">
+            As part of the exclusive HOK × Bleach collaboration, Dragon AI deployed striking LRT door wraps and stair wraps across key LRT-1 and LRT-2 stations in Metro Manila. The vivid crossover artwork — featuring Honor of Kings characters reimagined in Bleach's iconic art style — transformed everyday transit into a branded commuter experience.
+          </p>
+          <p class="campaign-desc">
+            Running across multiple stations simultaneously, the campaign delivered millions of daily impressions from commuters who couldn't miss the bold, larger-than-life artwork surrounding them.
+          </p>
+        </div>
+
+        <div class="campaign-gallery g2 reveal d2">
+          <div class="gallery-item">
+            <img src="Assets/HOK/lrt-door-wraps.png" alt="HOK x Bleach LRT Door Wraps" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">LRT Door Wraps — HOK × Bleach</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Assets/HOK/lrt-stair-wraps.png" alt="HOK LRT Station Stair Wraps" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">Station Stair Wraps</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       CAMPAIGN 04 — Public Transport (Jeepney)
+  ===================== -->
+  <section class="campaign-section alt">
+    <div class="campaign-inner">
+
+      <div class="campaign-header">
+        <div class="reveal">
+          <div class="campaign-num">Campaign 04</div>
+          <div class="campaign-category-label">Transit Media &nbsp;·&nbsp; Public Transport</div>
+          <h2 class="campaign-title">HOK 2025 OOH Campaign —<br>Public Transport</h2>
+          <p class="campaign-title-zh">2025年王者荣耀公共交通广告活动</p>
+          <p class="campaign-desc">
+            Dragon AI brought Honor of Kings to the streets of Metro Manila through a large-scale jeepney wrapping campaign. Custom-designed jeepneys became moving billboards, blanketing the city with vibrant HOK artwork and reaching audiences across all major routes and barangays — from the business districts to the neighborhoods.
+          </p>
+          <p class="campaign-desc">
+            The highly visible campaign generated widespread street-level buzz, making Honor of Kings a recognizable presence in everyday Filipino commuter life.
+          </p>
+        </div>
+
+        <div class="campaign-gallery g2 reveal d2">
+          <div class="gallery-item">
+            <img src="Assets/HOK/jeepney-mockup.png" alt="HOK Jeepney Wrap Design Mockup" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">Jeepney Wrap Design</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Assets/HOK/jeepney-deployed.png" alt="Honor of Kings Branded Jeepney on Manila Streets" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">Deployed on Manila Streets</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       CAMPAIGN 05 — Public Transit (LRT Full Wrap + Cosplayers)
+  ===================== -->
+  <section class="campaign-section">
+    <div class="campaign-inner">
+
+      <div class="campaign-header">
+        <div class="reveal">
+          <div class="campaign-num">Campaign 05</div>
+          <div class="campaign-category-label">Transit Media &nbsp;·&nbsp; LRT Train Wrap</div>
+          <h2 class="campaign-title">HOK 2025 OOH Campaign —<br>Public Transit</h2>
+          <p class="campaign-title-zh">2025年王者荣耀列车全包装活动</p>
+          <p class="campaign-desc">
+            The centerpiece of Dragon AI's 2025 HOK transit media campaign was a full LRT train wrap — transforming an entire train into a moving Honor of Kings experience. Every surface, from the exterior carriages to interior panels, was covered with immersive HOK artwork.
+          </p>
+          <p class="campaign-desc">
+            Paired with live in-station cosplay activations featuring fan-favorite HOK characters, the campaign delivered iconic brand moments that dominated social media — with photos and videos of the wrapped train and cosplayers going viral across Filipino gaming and pop culture communities.
+          </p>
+        </div>
+
+        <div class="campaign-gallery g2 reveal d2">
+          <div class="gallery-item">
+            <img src="Assets/HOK/lrt-train-full-wrap.png" alt="Honor of Kings LRT Train Full Wrap" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">Full LRT Train Wrap</span>
+          </div>
+          <div class="gallery-item">
+            <img src="Assets/HOK/cosplayers-station.png" alt="HOK Cosplay Activation at LRT Station" loading="lazy" onerror="this.style.opacity='0'">
+            <span class="gallery-caption">In-Station Cosplay Activation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================
+       BACK TO PROJECTS + CTA
+  ===================== -->
+  <div class="project-nav-bar">
+    <div class="project-nav-inner">
+      <a href="projects.html" class="project-back-btn">
+        <i class="fi fi-rr-arrow-left"></i>
+        Back to Projects
+      </a>
+      <a href="contact.html" class="btn-primary">
+        Work With Us
+        <i class="fi fi-rr-arrow-right btn-icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- =====================
+       CTA
+  ===================== -->
+  <section class="cta-section">
+    <div class="cta-box reveal">
+      <div class="cta-glow"></div>
+      <span class="s-tag">Get Started</span>
+      <h2 class="cta-title">
+        Ready to make your brand<br>
+        <span class="grad-text">impossible to ignore?</span>
+      </h2>
+      <p class="cta-desc">
+        Dragon AI delivers high-impact OOH campaigns, 3D billboard productions, and transit media activations across the Philippines and APAC. Let's create something historic together.
+      </p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-primary">
+          Start a Conversation
+          <i class="fi fi-rr-arrow-right btn-icon"></i>
+        </a>
+        <a href="projects.html" class="btn-ghost">View More Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="footer-logo-frame">
+            <img src="Assets/DragonAi LOGO v3.png" alt="Dragon AI logo mark" class="logo-mark">
+          </div>
+          <span class="logo-wordmark">DRAGON<span class="logo-ai">AI</span></span>
+        </a>
+        <p>Dragon AI Media Inc. is the advertising subsidiary of Philippine Dragon Media Network — one of the most influential Chinese news platforms in the Philippines.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Creative Services</a></li>
+          <li><a href="index.html#services">Media Buying</a></li>
+          <li><a href="index.html#services">Partnerships</a></li>
+          <li><a href="index.html#services">Production</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@dragonai.ph">hello@dragonai.ph</a></li>
+          <li><a href="#">Manila, Philippines</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2025 Dragon AI Media Inc. All Rights Reserved.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Facebook"><i class="fi fi-brands-facebook"></i></a>
+        <a href="#" class="social-btn" aria-label="X / Twitter"><i class="fi fi-brands-twitter"></i></a>
+        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+        <a href="#" class="social-btn" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================
+       JAVASCRIPT
+  ===================== -->
+  <script>
+    /* Navbar scroll */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* Mobile menu */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
+
+    /* Theme toggle */
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light');
+    }
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    /* Scroll reveal */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
